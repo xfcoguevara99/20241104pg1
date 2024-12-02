@@ -43,6 +43,51 @@ bool eh_data_valida(int dia, int mes, int ano){
     return resultado;
 }
 
+int dias_decorridos(int dia,int mes, int ano){
+    int contador;
+    switch (mes)
+    {
+    case 1:
+        contador = dia;
+        break;
+    case 2:
+        contador = num_dias(1,ano)+ dia;
+        break;
+    case 3:
+        contador = num_dias(1,ano) + num_dias(2,ano) + dia;
+        break;
+    case 4:
+        contador =num_dias(1,ano) + num_dias(2,ano)+num_dias(3,ano)+ dia;
+        break;
+    case 5:
+        contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano) + dia;
+        break;
+    case 6:
+        contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano) +  dia;
+        break;
+    case 7:
+        contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano) +  dia;
+        break;
+    case 8:
+        contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano) +  dia;
+        break;
+    case 9:
+        contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano)+num_dias(8,ano) +  dia;
+        break;
+    case 10:
+        contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano)+num_dias(8,ano)+num_dias(9,ano) +  dia;
+        break;
+    case 11:
+        contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano)+num_dias(8,ano)+num_dias(9,ano)+num_dias(10,ano) +  dia;
+        break;
+    case 12:
+        contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano)+num_dias(8,ano)+num_dias(9,ano)+num_dias(10,ano)+num_dias(11,ano) +  dia;
+        break;
+    }
+    return contador;
+
+}
+
 int main()
 {
     int dia,mes,ano,contador;
@@ -50,64 +95,14 @@ int main()
     scanf("%d/%d/%d",&dia,&mes,&ano);
     if (eh_data_valida(dia,mes,ano))
     {
-        switch (mes)
-        {
-            case 1:
-                contador = dia;
-                break;
-            case 2:
-                contador = num_dias(1,ano)+ dia;
-                break;
-            case 3:
-                contador = num_dias(1,ano) + num_dias(2,ano) + dia;
-                break;
-            case 4:
-                contador =num_dias(1,ano) + num_dias(2,ano)+num_dias(3,ano)+ dia;
-                break;
-            case 5:
-                contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano) + dia;
-                break;
-            case 6:
-                contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano) +  dia;
-                break;
-            case 7:
-                contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano) +  dia;
-                break;
-            case 8:
-                contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano) +  dia;
-                break;
-            case 9:
-                contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano)+num_dias(8,ano) +  dia;
-                break;
-            case 10:
-                contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano)+num_dias(8,ano)+num_dias(9,ano) +  dia;
-                break;
-            case 11:
-                contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano)+num_dias(8,ano)+num_dias(9,ano)+num_dias(10,ano) +  dia;
-                break;
-            case 12:
-                contador = num_dias(1,ano) + num_dias(2,ano) + num_dias(3,ano)+num_dias(4,ano)+num_dias(5,ano)+num_dias(6,ano)+num_dias(7,ano)+num_dias(8,ano)+num_dias(9,ano)+num_dias(10,ano)+num_dias(11,ano) +  dia;
-                break;
-        }
+        contador = dias_decorridos(dia,mes,ano);
+        
     }else
     {
-        printf("Error data invalida!");
+        printf("Error data invalida!\n");
         return 0;
     }
     
     printf("Dias decorridos: %d\n",contador);
-    printf("%d\n",bissexto(ano));
-    printf("%d\n",num_dias(1,ano));
-    printf("%d\n",num_dias(2,ano));
-    printf("%d\n",num_dias(3,ano));
-    printf("%d\n",num_dias(4,ano));
-    printf("%d\n",num_dias(5,ano));
-    printf("%d\n",num_dias(6,ano));
-    printf("%d\n",num_dias(7,ano));
-    printf("%d\n",num_dias(8,ano));
-    printf("%d\n",num_dias(9,ano));
-    printf("%d\n",num_dias(10,ano));
-    printf("%d\n",num_dias(11,ano));
-    printf("%d\n",num_dias(12,ano));
     return 0;
 }
