@@ -32,20 +32,19 @@ float converte_k_para_f(float TK){
     return TF;
 }
 float converter_temperatura(float t,char Ti,char Tf){
-    if (Ti=="C" && Tf =="F"){
+    if ((Ti == 'C') && (Tf == 'F')){
         return converte_c_para_f(t);
-    }else if(Ti=="F" && Tf =="C"){
+    }else if(Ti == 'F' && Tf == 'C'){
         return converte_f_para_c(t);
-    }else if (Ti=="C" && Tf =="K"){
+    }else if (Ti == 'C' && Tf == 'K'){
         return converte_c_para_k(t);
-    }else if(Ti=="K" && Tf =="C"){
+    }else if(Ti == 'K' && Tf == 'C'){
         return converte_k_para_c(t);
-    }else if (Ti=="F" && Tf =="k"){
+    }else if (Ti == 'F' && Tf == 'K'){
         return converte_f_para_k(t);
-    }else if(Ti=="C" && Tf =="F"){
+    }else if(Ti == 'K' && Tf == 'F'){
         return converte_k_para_f(t);
-    }
-    
+    } 
 
 }
 
@@ -55,9 +54,9 @@ int main(){
     printf("Entre com o valor da temperatura: ");
     scanf("%f",&temperatura);
     printf("Entre com a escala de origem (C, F, K): ");
-    scanf("%c",&origem);
+    scanf(" %c",&origem);
     printf("Entre com a escala de destino (C, F, K): ");
-    scanf("%c",&destino);
-    printf("Temperatura convertida: %.2f",converter_temperatura(temperatura,origem,destino));
+    scanf(" %c",&destino);
+    printf("Temperatura convertida: %.2f\n",converter_temperatura(temperatura,origem,destino));
     return 0;
 }
