@@ -1,9 +1,9 @@
 #include <stdio.h>
-void eh_plural(int numero, char escala)
+void eh_plural_unidade(int numero, char unidade_tempo)
 {
     if (numero>1)
     {
-        switch (escala)
+        switch (unidade_tempo)
         {
             case 'H':
                 printf("%d horas",numero);
@@ -17,7 +17,7 @@ void eh_plural(int numero, char escala)
         }
     }else if (numero==1)
     {
-        switch (escala)
+        switch (unidade_tempo)
         {
             case 'H':
                 printf("%d hora",numero);
@@ -36,20 +36,17 @@ int main()
     int segundos,horas,minutos;
     printf("Entre com a quantidade de segundos: ");
     scanf("%d",&segundos);
-    //Calculo das horas
     horas = segundos/3600;
     minutos = (segundos%3600)/60;
     segundos = segundos - horas*3600 - minutos*60;
-    eh_plural(horas,'H');
+    eh_plural_unidade(horas,'H');
     if (horas != 0 && minutos!=0){
         printf(", ");
     }
-    eh_plural(minutos,'M');
+    eh_plural_unidade(minutos,'M');
     if (segundos!=0 && (minutos!=0 || horas!= 0)){
         printf(", ");
     }
-    eh_plural(segundos,'S');
-    
-
+    eh_plural_unidade(segundos,'S');
     return 0;
 }
