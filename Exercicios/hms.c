@@ -41,11 +41,11 @@ int main()
     minutos = (segundos%3600)/60;
     segundos = segundos - horas*3600 - minutos*60;
     eh_plural(horas,'H');
-    if (horas != 0 && minutos!=0 && segundos!=0){
+    if (horas != 0 && minutos!=0){
         printf(", ");
     }
     eh_plural(minutos,'M');
-    if (segundos!=0 && minutos!=0){
+    if (segundos!=0 && minutos!=0 && horas != 0){
         printf(", ");
     }
     eh_plural(segundos,'S');
