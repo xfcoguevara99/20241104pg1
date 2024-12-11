@@ -45,7 +45,7 @@ int main()
         printf(", ");
     }
     eh_plural(minutos,'M');
-    if (segundos!=0 && minutos!=0 && horas != 0){
+    if (segundos!=0 && (minutos!=0 || horas!= 0)){
         printf(", ");
     }
     eh_plural(segundos,'S');
