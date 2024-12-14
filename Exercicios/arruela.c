@@ -3,7 +3,7 @@
 float calc_area_circulo(float diametro)
 {
     float resultado;
-    resultado = M_PI * pow(diametro/2,2);
+    resultado = 3.14* pow(diametro/2,2);
     return resultado;
 }
 
