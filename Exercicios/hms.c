@@ -1,5 +1,5 @@
 #include <stdio.h>
-void eh_plural_unidade(int numero, char unidade_tempo)
+void plural_ou_singular(int numero, char unidade_tempo)
 {
     if (numero>1)
     {
@@ -39,14 +39,14 @@ int main()
     horas = segundos/3600;
     minutos = (segundos%3600)/60;
     segundos = segundos - horas*3600 - minutos*60;
-    eh_plural_unidade(horas,'H');
+    plural_ou_singular(horas,'H');
     if (horas != 0 && minutos!=0){
         printf(", ");
     }
-    eh_plural_unidade(minutos,'M');
+    plural_ou_singular(minutos,'M');
     if (segundos!=0 && (minutos!=0 || horas!= 0)){
         printf(", ");
     }
-    eh_plural_unidade(segundos,'S');
+    plural_ou_singular(segundos,'S');
     return 0;
 }
